@@ -4,13 +4,13 @@ import glob
 
 # read files
 def read_files(dir):
-    '''Read several files using pandas and regular expressions
+    '''Read several files using Pandas and regular expressions
 
     Args:
-        dir: Text or regular expression. E.g., 'myfiles/*.csv'.
+        dir: Text or regular expression. E.g., 'myfiles/*.csv'
 
     Returns:
-        Pandas dataframe.
+        Pandas dataframe
 
     '''
     filenames = glob.glob(dir)
@@ -19,12 +19,13 @@ def read_files(dir):
 
 # missing data
 def prop_missing(df):
-    '''Proportion of missing cases for Pandas dataframe
+    '''Proportion of missing cases for Pandas DataFrames
 
     Args:
-        df: Dataframe.
+        df: DataFrame
+
     Returns:
-        Pandas series with proportion of missing cases.
+        Pandas series with proportion of missing cases
 
     '''
     m = df.isnull().sum()/len(df)
@@ -36,13 +37,14 @@ def prop_missing(df):
 
 # impute values
 def impute_values(data, group_vars):
-    '''Simple imputation of missing values by group.
+    '''Simple imputation of missing values by group
 
     Args:
-        data: Dataframe
-        group_vars: List of variables to group by.
+        data: DataFrame
+        group_vars: List of variables to group by
+
     Returns:
-        Dataframe with imputed data.
+        DataFrame with imputed data
 
     '''
 
@@ -69,15 +71,15 @@ def impute_values(data, group_vars):
 
 # transform variables
 def transform_variables(data, variables, kind='log'):
-    '''Transformation of variable using pandas
+    '''Transformation of variable using Pandas
 
     Args:
-        data: Dataframe.
-        variables: List of variables to transform.
-        kind: Type of tranformation. Default is 'log' (natural logarithm). 'z' means z-score.
+        data: DataFrame
+        variables: List of variables to transform
+        kind: Type of tranformation. Default is 'log' (natural logarithm). 'z' means z-score
 
     Returns:
-        Dataframe with new transform variables (prefix log and z). 
+        DataFrame with new transform variables (prefix log and z)
     '''
     d = data.copy()
     for name in variables:
