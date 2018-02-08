@@ -1,6 +1,6 @@
 # pysdaza
 
-Python packages with functions I use everyday.
+My Python package with functions I use everyday.
 
 #### Installation
 
