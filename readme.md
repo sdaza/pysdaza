@@ -2,6 +2,6 @@
 
 My Python package with functions I use everyday.
 
-#### Installation
+## Installation
 
 `pip install git+https://github.com/sdaza/pysdaza.git`
