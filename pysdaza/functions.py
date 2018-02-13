@@ -48,10 +48,10 @@ def impute_values(data, group_vars=None):
 
     '''
     df = data.copy()
-    if (groups_vars is None):
-        group= df.groupby(group_vars)
-    else:
+    if (group_vars is None):
         group = df.groupby(df.index)
+    else:
+        group = df.groupby(group_vars)
 
     def impute_median(series):
         return series.fillna(series.median())
