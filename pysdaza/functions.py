@@ -47,9 +47,11 @@ def impute_values(data, group_vars):
         DataFrame with imputed data
 
     '''
-
     df = data.copy()
-    group= df.groupby(group_vars)
+    if (groups_vars is None):
+        group= df.groupby(group_vars)
+    else:
+        group = df.groupby(df.index)
 
     def impute_median(series):
         return series.fillna(series.median())
