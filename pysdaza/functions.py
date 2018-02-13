@@ -36,12 +36,12 @@ def prop_missing(df):
         print('No missing data!')
 
 # impute values
-def impute_values(data, group_vars):
+def impute_values(data, group_vars=None):
     '''Simple imputation of missing values by group
 
     Args:
         data: DataFrame
-        group_vars: List of variables to group by
+        group_vars: List of variables to group by, if None, the index will be used
 
     Returns:
         DataFrame with imputed data
