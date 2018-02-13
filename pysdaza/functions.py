@@ -36,7 +36,7 @@ def prop_missing(df):
         print('No missing data!')
 
 # impute values
-def impute_values(data, group_vars=None):
+def impute_values(data, group_vars=list()):
     '''Simple imputation of missing values by group
 
     Args:
@@ -48,7 +48,8 @@ def impute_values(data, group_vars=None):
 
     '''
     df = data.copy()
-    if (group_vars is None):
+
+    if (len(group_vars) == 0):
         group = df.groupby(df.index)
     else:
         group = df.groupby(group_vars)
